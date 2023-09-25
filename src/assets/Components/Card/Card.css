@@ -1,0 +1,20 @@
+.PokeCard {
+  background-color: rgb(200, 200, 200);
+  height: 350px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.PokeImg {
+  position: relative;
+  height: 65%;
+}
+
+.PokeName {
+  position: relative;
+  height: 35%;
+}

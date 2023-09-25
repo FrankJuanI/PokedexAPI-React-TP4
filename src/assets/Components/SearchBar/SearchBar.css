@@ -1,0 +1,17 @@
+.header {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0.3em 0em 4em 0em;
+}
+
+.input {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  padding-left: 1em;
+}
