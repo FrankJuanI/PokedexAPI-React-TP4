@@ -1,8 +1,13 @@
 import "./SearchBar.css";
-function SearchBar() {
+function SearchBar({ setSearch }) {
   return (
     <div className="header">
-      <input className="input" type="text" placeholder="Search..." />
+      <input
+        className="input"
+        type="text"
+        placeholder="Search..."
+        onChange={(event) => setSearch(event.target.value)}
+      />
     </div>
   );
 }

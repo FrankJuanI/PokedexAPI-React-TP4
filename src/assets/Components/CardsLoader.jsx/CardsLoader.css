@@ -1,9 +1,0 @@
-.cardsLoader-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1.3em;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: 0 auto;
-}

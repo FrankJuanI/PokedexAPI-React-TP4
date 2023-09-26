@@ -1,28 +1,27 @@
 import "./Card.css";
 import { useState, useEffect } from "react";
 
-function Card({ name, imageUrl }) {
+function Card({ name }) {
   const [image, setImage] = useState();
-
-  const getImageurl = async (imageUrl) => {
+  const getImageurl = async () => {
     try {
-      const response = await fetch(imageUrl);
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
       if (response.ok) {
         const data = await response.json();
         setImage(data.sprites.front_default);
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
-    getImageurl(imageUrl);
-  }, []);
-
-  console.log(image);
+    getImageurl();
+  }, [name]);
 
   return (
     <div className="PokeCard">
-      <img className="pokemon-img" src={image} alt="" />
+      {image && <img className="pokemon-img" src={image} alt="" />}
       <p className="pokemon-name">{name}</p>
     </div>
   );
