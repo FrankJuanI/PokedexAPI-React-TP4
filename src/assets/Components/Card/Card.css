@@ -1,20 +1,24 @@
 .PokeCard {
   background-color: rgb(200, 200, 200);
-  height: 350px;
+  height: 250px;
   width: 300px;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 10px;
   width: 20%;
+  min-width: 200px;
 }
 
-.PokeImg {
+.pokemon-img {
   position: relative;
   height: 65%;
 }
 
-.PokeName {
+.pokemon-name {
   position: relative;
   height: 35%;
+  font-size: 2em;
+  margin: 0 auto;
+  font-family: sans-serif;
 }

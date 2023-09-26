@@ -4,27 +4,26 @@ import { useState, useEffect } from "react";
 function Card({ name, imageUrl }) {
   const [image, setImage] = useState();
 
-  const getImage = async (image) => {
+  const getImageurl = async (imageUrl) => {
     try {
-      const response = await fetch(image);
+      const response = await fetch(imageUrl);
       if (response.ok) {
         const data = await response.json();
-        const results = await data.results;
-        setImage(results);
+        setImage(data.sprites.front_default);
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   useEffect(() => {
-    getImage(imageUrl);
+    getImageurl(imageUrl);
   }, []);
+
   console.log(image);
+
   return (
     <div className="PokeCard">
-      <img src={image} alt="" />
-      <p>{name}</p>
+      <img className="pokemon-img" src={image} alt="" />
+      <p className="pokemon-name">{name}</p>
     </div>
   );
 }

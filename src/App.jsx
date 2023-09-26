@@ -28,7 +28,6 @@ function App() {
   }, []);
 
   console.log("Full data: ", dataApi);
-  console.log("Results: ", dataApi);
 
   if (dataApi === undefined) {
     return;
