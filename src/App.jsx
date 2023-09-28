@@ -37,21 +37,22 @@ function App() {
     );
   }, [search]);
 
-  console.log("filter: ", filter);
-
   return (
     <div className="api">
       <SearchBar setSearch={setSearch} />
       <div
         style={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
           flexDirection: "row",
           width: "100%",
           position: "relative",
           flexWrap: "wrap",
-          gap: "2em",
+          gap: "1.5em",
           margin: "0 auto",
           justifyContent: "center",
+          justifyItems: "center",
+          maxWidth: "1200px",
         }}
         className="CardsContainer"
       >

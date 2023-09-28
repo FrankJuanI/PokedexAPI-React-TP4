@@ -1,7 +1,7 @@
 .PokeCard {
   background-color: rgb(200, 200, 200);
-  height: 250px;
-  width: 200px;
+  height: 200px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -9,6 +9,10 @@
   width: 20%;
   min-width: 200px;
   align-items: center;
+}
+
+.PokeCard:hover {
+  background-color: greenyellow;
 }
 
 .pokemon-img {
