@@ -1,0 +1,27 @@
+.pokemon-name {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.pokemon-name h2 {
+  margin: 0;
+  display: inline-block;
+}
+
+.stat-bar-container {
+  width: 300px;
+  height: 20px;
+  display: flex;
+  background-color: gray;
+  align-items: center;
+  margin: 0.4em 0;
+}
+
+.stat-bar {
+  height: 14px;
+  left: 1px;
+  background-color: red;
+  height: "14px";
+  position: relative;
+}

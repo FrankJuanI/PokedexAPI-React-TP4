@@ -1,24 +1,19 @@
+import "/StatsBar.css";
+
 function StatsBar({ data }) {
   return (
-    <div className="StatBar">
-      <h3 style={{ margin: "0" }}>{data.stat.name}</h3>
-      <div
-        style={{
-          width: "300px",
-          height: "30px",
-          backgroundColor: "gray",
-          display: "flex",
-          alignItems: "center",
-          margin: "1em 0",
-        }}
-      >
+    <div className="stat-bar">
+      <div className="pokemon-name">
+        <h3 style={{ margin: "0", display: "inline-block" }}>
+          {data.stat.name}
+        </h3>
+        <h2>{data.base_stat}</h2>
+      </div>
+      <div className="stat-bar-container">
         <div
+          className="stat-bar"
           style={{
-            height: "24px",
-            left: "1px",
-            backgroundColor: "red",
-            position: "relative",
-            width: "60%",
+            width: `calc(${data.base_stat}%)`,
           }}
         ></div>
       </div>

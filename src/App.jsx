@@ -4,20 +4,22 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [dataApi, setDataApi] = useState();
-  const [filter, setFilter] = useState();
+  const [pokemons, setPokemons] = useState([]);
   const [search, setSearch] = useState("");
+  // const [filteredPokemons, setFilteredPokemons] = useState();
+  const filteredPokemons = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(search.toLowerCase())
+  );
 
-  const GetData = async () => {
+  const getData = async () => {
     try {
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon/?limit=150"
+        "https://pokeapi.co/api/v2/pokemon/?limit=100"
       );
       if (response.ok) {
         const data = await response.json();
         const results = data.results;
-        setDataApi(results);
-        if (filter === undefined) setFilter(results);
+        setPokemons(results);
       }
     } catch (error) {
       console.log(error);
@@ -25,41 +27,16 @@ function App() {
   };
 
   useEffect(() => {
-    GetData();
-    setFilter(
-      dataApi?.filter((pokemon) => {
-        if (search === "") {
-          return pokemon;
-        } else if (pokemon.name.toLowerCase().includes(search.toLowerCase())) {
-          return pokemon;
-        }
-      })
-    );
+    getData();
   }, [search]);
 
   return (
     <div className="api">
       <SearchBar setSearch={setSearch} />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-          flexDirection: "row",
-          width: "100%",
-          position: "relative",
-          flexWrap: "wrap",
-          gap: "1.5em",
-          margin: "0 auto",
-          justifyContent: "center",
-          justifyItems: "center",
-          maxWidth: "1200px",
-        }}
-        className="CardsContainer"
-      >
-        {filter &&
-          filter.map((pokemon) => (
-            <Card name={pokemon.name} imageUrl={pokemon.url} search={search} />
-          ))}
+      <div className="cards-container">
+        {filteredPokemons.map((pokemon) => (
+          <Card name={pokemon.name} />
+        ))}
       </div>
     </div>
   );

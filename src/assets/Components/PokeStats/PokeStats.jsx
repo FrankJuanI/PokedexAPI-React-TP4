@@ -31,7 +31,7 @@ function PokeStats() {
 
   return (
     <div
-      className="PokeStats-container"
+      className="PokeStats-container "
       style={{
         backgroundColor: "#eee",
         border: "1px solid #ddd",
@@ -39,6 +39,8 @@ function PokeStats() {
         borderRadius: "20px",
         display: "flex",
         flexDirection: "column",
+        maxWidth: "1000px",
+        margin: "0 auto",
       }}
     >
       <h2
@@ -47,6 +49,7 @@ function PokeStats() {
           margin: "0",
           fontFamily: "sans-serif",
           display: "block",
+          marginLeft: "1em",
         }}
       >
         {id}
@@ -60,9 +63,13 @@ function PokeStats() {
       >
         <div
           className="PokeStats-firstColumn"
-          style={{ position: "relative", width: "50%" }}
+          style={{
+            position: "relative",
+            width: "50%",
+            justifyContent: "center",
+          }}
         >
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
             {/* <button style={{ backgroundColor: "transparent", border: "none" }}>
                 <IoArrowBackCircleSharp style={{ width: "5rem", height: "5rem" }} />
               </button> */}
@@ -84,7 +91,9 @@ function PokeStats() {
               {
                 console.log(stats);
               }
-              return <StatsBar data={stats} />;
+              return (
+                <StatsBar key={stats.stat.name + data.base_stat} data={stats} />
+              );
             })}
         </div>
       </div>

@@ -1,6 +1,5 @@
 import "./Card.css";
 import { useState, useEffect } from "react";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function Card({ name }) {
@@ -27,7 +26,7 @@ function Card({ name }) {
   };
 
   return (
-    <div className="PokeCard" onClick={handleclick}>
+    <div className="poke-card" onClick={handleclick}>
       {image && <img className="pokemon-img" src={image} alt="" />}
       <p className="pokemon-name">{name}</p>
       {/* <Link to={`/pokemons/${name}`}> a </Link> */}
