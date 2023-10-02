@@ -1,4 +1,5 @@
 import "./SearchBar.css";
+
 function SearchBar({ setSearch }) {
   return (
     <div className="header">

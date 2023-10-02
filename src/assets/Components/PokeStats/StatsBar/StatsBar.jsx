@@ -1,17 +1,17 @@
-import "/StatsBar.css";
+import "./StatsBar.css";
 
 function StatsBar({ data }) {
   return (
     <div className="stat-bar">
       <div className="pokemon-name">
-        <h3 style={{ margin: "0", display: "inline-block" }}>
+        <h2 style={{ margin: "0", display: "inline-block" }}>
           {data.stat.name}
-        </h3>
-        <h2>{data.base_stat}</h2>
+        </h2>
+        <h3>{data.base_stat}</h3>
       </div>
       <div className="stat-bar-container">
         <div
-          className="stat-bar"
+          className="stat-value-bar"
           style={{
             width: `calc(${data.base_stat}%)`,
           }}

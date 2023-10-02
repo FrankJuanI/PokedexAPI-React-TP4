@@ -2,26 +2,36 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  width: 300px;
+  height: 30px;
+}
+
+.pokemon-name h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 1rem;
 }
 
 .pokemon-name h2 {
   margin: 0;
   display: inline-block;
-}
-
-.stat-bar-container {
-  width: 300px;
-  height: 20px;
-  display: flex;
-  background-color: gray;
-  align-items: center;
-  margin: 0.4em 0;
+  font-size: 1rem;
 }
 
 .stat-bar {
-  height: 14px;
-  left: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 50px;
+}
+
+.stat-bar-container {
+  height: 20px;
+  display: flex;
+  position: absolute;
+  width: 300px;
+}
+
+.stat-value-bar {
   background-color: red;
-  height: "14px";
-  position: relative;
 }

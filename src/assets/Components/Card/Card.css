@@ -24,11 +24,12 @@
 .pokemon-name {
   position: relative;
   height: 35%;
+  justify-content: center;
+  width: 100%;
   font-size: 2em;
   margin: 0 auto;
   bottom: 1em;
   font-family: sans-serif;
-  bottom: 1.5em;
   display: flex;
   align-items: flex-end;
 }
