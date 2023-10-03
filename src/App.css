@@ -12,7 +12,5 @@
   flex-wrap: wrap;
   gap: 1.5em;
   margin: 0 auto;
-  justify-content: center;
-  justify-items: center;
   max-width: 1200px;
 }

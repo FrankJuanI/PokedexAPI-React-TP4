@@ -3,7 +3,7 @@ import "./StatsBar.css";
 function StatsBar({ data }) {
   return (
     <div className="stat-bar">
-      <div className="pokemon-name">
+      <div className="pokemonn-name">
         <h2 style={{ margin: "0", display: "inline-block" }}>
           {data.stat.name}
         </h2>

@@ -1,12 +1,13 @@
-import { Card } from "./assets/Components/Card/Card.jsx";
-import { SearchBar } from "./assets/Components/SearchBar/SearchBar.jsx";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from "./assets/Components/HomePage/HomePage.jsx";
 import "./App.css";
+import { PokeStats } from "./assets/Components/PokeStats/PokeStats.jsx";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
   const [search, setSearch] = useState("");
-  // const [filteredPokemons, setFilteredPokemons] = useState();
+
   const filteredPokemons = pokemons.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -31,14 +32,15 @@ function App() {
   }, [search]);
 
   return (
-    <div className="api">
-      <SearchBar setSearch={setSearch} />
-      <div className="cards-container">
-        {filteredPokemons.map((pokemon) => (
-          <Card name={pokemon.name} />
-        ))}
-      </div>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <HomePage filteredPokemons={filteredPokemons} setSearch={setSearch} />
+        }
+      />
+      <Route path="/pokemons/:id" element={<PokeStats />} />
+    </Routes>
   );
 }
 

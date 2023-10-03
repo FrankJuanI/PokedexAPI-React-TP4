@@ -1,9 +1,8 @@
 import "./Card.css";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Card({ name }) {
-  let navigate = useNavigate();
   const [image, setImage] = useState();
   const getImageurl = async () => {
     try {
@@ -21,16 +20,13 @@ function Card({ name }) {
     getImageurl();
   }, [name]);
 
-  const handleclick = () => {
-    navigate(`/pokemons/${name}`, { replace: true });
-  };
-
   return (
-    <div className="poke-card" onClick={handleclick}>
-      {image && <img className="pokemon-img" src={image} alt="" />}
-      <p className="pokemon-name">{name}</p>
-      {/* <Link to={`/pokemons/${name}`}> a </Link> */}
-    </div>
+    <Link to={`/pokemons/${name}`}>
+      <div className="poke-card">
+        {image && <img className="pokemon-img" src={image} alt="" />}
+        <p className="pokemon-name">{name}</p>
+      </div>
+    </Link>
   );
 }
 
