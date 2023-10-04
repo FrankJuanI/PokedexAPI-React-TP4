@@ -17,6 +17,11 @@
 .pokemon-img {
   position: relative;
   height: 65%;
+  height: 300px;
+}
+
+.pokemon-img img {
+  height: 500px;
 }
 
 a {
